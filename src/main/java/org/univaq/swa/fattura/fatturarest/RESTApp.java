@@ -9,10 +9,9 @@ import jakarta.ws.rs.core.Application;
 import org.univaq.swa.fattura.fatturarest.jackson.ObjectMapperContextResolver;
 import org.univaq.swa.fattura.fatturarest.resources.FattureResource;
 import org.univaq.swa.fattura.fatturarest.resources.ProdottiResource;
-import org.univaq.swa.fattura.fatturarest.security.AppExceptionMapper;
-import org.univaq.swa.fattura.fatturarest.security.AutenticazioneResource;
+import org.univaq.swa.fattura.fatturarest.security.AuthLoggedFilter;
+import org.univaq.swa.fattura.fatturarest.security.AuthenticationRes;
 import org.univaq.swa.fattura.fatturarest.security.CORSFilter;
-import org.univaq.swa.fattura.fatturarest.security.LoggedFilter;
 
 /**
  *
@@ -29,7 +28,7 @@ public class RESTApp extends Application {
         //con l'annotazione Path) che vogliamo pubblicare
         c.add(FattureResource.class);
         c.add(ProdottiResource.class);
-        c.add(AutenticazioneResource.class);
+        c.add(AuthenticationRes.class);
 
         //aggiungiamo il provider Jackson per poter
         //usare i suoi servizi di serializzazione e 
@@ -40,13 +39,10 @@ public class RESTApp extends Application {
         c.add(ObjectMapperContextResolver.class);
 
         //esempio di autenticazione
-        c.add(LoggedFilter.class);
+        c.add(AuthLoggedFilter.class);
 
         //aggiungiamo il filtro che gestisce gli header CORS
         c.add(CORSFilter.class);
-
-        //esempio di exception mapper, che mappa in Response eccezioni non già derivanti da WebApplicationException
-        c.add(AppExceptionMapper.class);
 
         classes = Collections.unmodifiableSet(c);
     }
