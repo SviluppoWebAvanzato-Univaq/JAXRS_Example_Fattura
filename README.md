@@ -1,4 +1,4 @@
-# FatturaREST_JAXRS
+# JAXRS_Example_Fattura
 > Example RESTful API "Fattura" (Invoice) developed with JAX-RS (Jersey) on JakartaEE9 and Tomcat 10
  
 This is the full implementation of the "Fattura" (invoice) RESTful API developed during the course lectures. It shows how to model the service using JAX-RS, including sub-resources, bearer token authorization, CORS headers injection, custom serializers and custom exception mappers.
