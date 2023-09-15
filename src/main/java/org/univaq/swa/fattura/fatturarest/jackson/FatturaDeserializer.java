@@ -7,8 +7,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import org.univaq.swa.fattura.fatturarest.model.Anagrafica;
 import org.univaq.swa.fattura.fatturarest.model.Fattura;
@@ -28,7 +28,7 @@ public class FatturaDeserializer extends JsonDeserializer<Fattura> {
         }
 
         if (node.has("data")) {
-            f.setData(jp.getCodec().treeToValue(node.get("data"), Calendar.class));
+            f.setData(jp.getCodec().treeToValue(node.get("data"), LocalDate.class));
         }
         if (node.has("intestatario")) {
             f.setIntestatario(jp.getCodec().treeToValue(node.get("intestatario"), Anagrafica.class));

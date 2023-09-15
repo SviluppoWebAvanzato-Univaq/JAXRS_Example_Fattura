@@ -16,7 +16,7 @@ public class FatturaSerializer extends JsonSerializer<Fattura> {
 
         jgen.writeStartObject(); // {
         jgen.writeNumberField("numero", item.getNumero()); // "numero": 1
-        jgen.writeObjectField("data", item.getData()); // "data": "4/5/2020"
+        jgen.writeObjectField("data", item.getData()); // "data": [2020,5,4]
         jgen.writeObjectField("intestatario", item.getIntestatario());
         jgen.writeObjectField("elementi", item.getElementi());
         jgen.writeObjectFieldStart("totali"); // "totali": {

@@ -57,7 +57,7 @@
                     <td></td>
                     <td><span data-rest-test-target data-rest-test-url="rest/fatture" data-rest-test-method="post"
                               data-rest-test-content-type="application/json" data-rest-test-status="201"
-                              data-rest-test-payload='{ "numero" : 1, "data" : "11/05/2020", "intestatario" : { "ragioneSociale" : "Pippo", "partitaIVA" : "123456789", "via" : "", "citta" : "", "civico" : "" }, "elementi" : [ { "codice" : "9371cb01-fe19-4b8d-bc96-10533cd2d79b", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 }, { "codice" : "558add18-f353-45ab-8c7a-ee5946562d57", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 } ], "totali" : { "totaleIVAEsclusa" : 0.0, "totaleIVA" : 0.0, "totaleIVAInclusa" : 0.0 } }'></span></td>
+                              data-rest-test-payload='{ "numero" : 1, "data" : [2023,9,15], "intestatario" : { "ragioneSociale" : "Pippo", "partitaIVA" : "123456789", "via" : "", "citta" : "", "civico" : "" }, "elementi" : [ { "codice" : "9371cb01-fe19-4b8d-bc96-10533cd2d79b", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 }, { "codice" : "558add18-f353-45ab-8c7a-ee5946562d57", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 } ], "totali" : { "totaleIVAEsclusa" : 0.0, "totaleIVA" : 0.0, "totaleIVAInclusa" : 0.0 } }'></span></td>
                     <td  class="output">Inserimento fattura</td>
                 </tr>
                 
@@ -110,7 +110,7 @@
                     <td></td>
                     <td><span data-rest-test-target data-rest-test-method="put" data-rest-test-url="rest/fatture/2020/1"
                               data-rest-test-content-type="application/json" data-rest-test-status="204"
-                              data-rest-test-payload='{ "numero" : 1, "data" : "11/05/2020", "intestatario" : { "ragioneSociale" : "Pippo", "partitaIVA" : "123456789", "via" : "", "citta" : "", "civico" : "" }, "elementi" : [ { "codice" : "9371cb01-fe19-4b8d-bc96-10533cd2d79b", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 }, { "codice" : "558add18-f353-45ab-8c7a-ee5946562d57", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 } ], "totali" : { "totaleIVAEsclusa" : 0.0, "totaleIVA" : 0.0, "totaleIVAInclusa" : 0.0 } }'></span></td>
+                              data-rest-test-payload='{ "numero" : 1, "data" : [2023,9,15], "intestatario" : { "ragioneSociale" : "Pippo", "partitaIVA" : "123456789", "via" : "", "citta" : "", "civico" : "" }, "elementi" : [ { "codice" : "9371cb01-fe19-4b8d-bc96-10533cd2d79b", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 }, { "codice" : "558add18-f353-45ab-8c7a-ee5946562d57", "descrizione" : "Prodotto inutile", "quantita" : 10, "unita" : "pz", "prezzoUnitario" : 12.0, "prezzoTotale" : 120.0, "iva" : 4 } ], "totali" : { "totaleIVAEsclusa" : 0.0, "totaleIVA" : 0.0, "totaleIVAInclusa" : 0.0 } }'></span></td>
                     <td  class="output">Fattura completa</td>
                 </tr>
                 

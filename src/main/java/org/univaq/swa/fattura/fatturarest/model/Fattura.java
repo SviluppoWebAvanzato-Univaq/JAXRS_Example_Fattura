@@ -1,5 +1,8 @@
 package org.univaq.swa.fattura.fatturarest.model;
 
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
+import java.time.temporal.TemporalField;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -11,7 +14,7 @@ import java.util.List;
 public class Fattura {
 
     private int numero;
-    private Calendar data;
+    private LocalDate data;
     private Anagrafica intestatario;
     private List<Prodotto> elementi;
     private double totaleIVAEsclusa;
@@ -21,7 +24,7 @@ public class Fattura {
     public Fattura() {
         intestatario = new Anagrafica();
         numero = 0;
-        data = Calendar.getInstance();
+        data = LocalDate.now();
         elementi = new ArrayList<>();
         totaleIVAEsclusa = 0;
         totaleIVA = 0;
@@ -59,14 +62,14 @@ public class Fattura {
     /**
      * @return the data
      */
-    public Calendar getData() {
+    public LocalDate getData() {
         return data;
     }
 
     /**
      * @param data the data to set
      */
-    public void setData(Calendar data) {
+    public void setData(LocalDate data) {
         this.data = data;
     }
 
@@ -131,8 +134,8 @@ public class Fattura {
 
         Fattura f = new Fattura();
         f.setNumero(numero);
-        Calendar data = Calendar.getInstance();
-        data.set(Calendar.YEAR, anno);
+        LocalDate data = LocalDate.now();
+        data.with(ChronoField.YEAR, anno);
         f.setData(data);
 
         f.getIntestatario().setRagioneSociale("Pippo");

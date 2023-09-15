@@ -1,4 +1,3 @@
-
 package org.univaq.swa.fattura.fatturarest.jackson;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -40,8 +39,12 @@ public class ObjectMapperContextResolver implements ContextResolver<ObjectMapper
         customSerializer.addSerializer(Fattura.class, new FatturaSerializer());
         customSerializer.addDeserializer(Fattura.class, new FatturaDeserializer());
         //
-
         mapper.registerModule(customSerializer);
+
+        //per il supporto alla serializzazione automatica dei tipi Date/Time di Java 8 (LocalDate, LocalTime, ecc.)
+        //è necessario aggiungere alle dipendenze la libreria com.fasterxml.jackson.jakarta.rs:jackson-jakarta-rs-json-provider
+        //questa feature fa cercare a Jackson tutti i moduli compatibili inseriti nel contesto...
+        mapper.findAndRegisterModules();
 
         return mapper;
     }

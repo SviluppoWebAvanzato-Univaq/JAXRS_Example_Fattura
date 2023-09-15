@@ -18,6 +18,8 @@ import jakarta.ws.rs.core.Context;
 import jakarta.ws.rs.core.Response;
 import jakarta.ws.rs.core.SecurityContext;
 import jakarta.ws.rs.core.UriInfo;
+import java.time.LocalDate;
+import java.time.temporal.ChronoField;
 import org.univaq.swa.fattura.fatturarest.model.Fattura;
 import org.univaq.swa.fattura.fatturarest.security.Logged;
 
@@ -94,7 +96,7 @@ public class FattureResource {
                     .path(getClass(), "getItem")
                     .build(2020, i);
             e.put("url", uri.toString());
-            e.put("data", Calendar.getInstance());
+            e.put("data", LocalDate.now());
             l.add(e);
         }
 
@@ -169,7 +171,7 @@ public class FattureResource {
         URI uri = uriinfo.getBaseUriBuilder()
                 .path(getClass())
                 .path(getClass(), "getItem")
-                .build(f.getData().get(Calendar.YEAR), f.getNumero());
+                .build(f.getData().get(ChronoField.YEAR), f.getNumero());
         return Response.created(uri).build();
     }
 }
